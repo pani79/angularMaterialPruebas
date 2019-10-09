@@ -1,0 +1,31 @@
+<p>valida-date-picker works!</p>
+
+<h1>Validar DatePicker</h1>
+
+
+<form [formGroup]="prueba" (ngsubmit)="formularioEnviar(prueba.value)">
+  
+    
+    <mat-form-field>
+        <mat-select formControlName="rSexo" placeholder="Sexo" required>
+          <mat-option>-- Select Any --</mat-option>
+          <mat-option value="1">Femenino</mat-option>
+          <mat-option value="2">Masculino</mat-option>
+          <mat-option value="3">Indeterminado</mat-option>
+        </mat-select>
+        <mat-error *ngIf="prueba.controls['rSexo'].hasError('required')">Este es un campo requerido</mat-error>
+        <mat-error>
+          <!-- <span *ngIf="!regiForm.get('Blog').valid && regiForm.get('Blog').touched">Please select any item !!!</span> -->
+        </mat-error>
+      </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="pickerto" placeholder="Fecha de nacimiento" formControlName="rFechaNacimiento">
+        <mat-datepicker-toggle matSuffix [for]="pickerto"></mat-datepicker-toggle>
+        <mat-datepicker #pickerto></mat-datepicker>
+        <mat-error *ngIf="prueba.controls['rFechaNacimiento'].hasError('required')">Este es un campo requerido</mat-error>
+  </mat-form-field>
+  
+  <button mat-raised-button color="primary" (click)="formularioEnviar(prueba.value)">Primary</button>
+
+</form>
