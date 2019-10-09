@@ -10,10 +10,13 @@ import { FormBuilder } from '@angular/forms';
 export class ValidaDatePickerComponent implements OnInit {
 
   prueba: FormGroup;
-
+  minDateValue = new Date(1900, 1, 1);
+  maxDateValue = new Date();
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+  this.minDateValue = new Date(1900, 1, 1);
+  this.maxDateValue = new Date();
     this.prueba  = this.fb.group({
       rSexo: ['', [
         Validators.required

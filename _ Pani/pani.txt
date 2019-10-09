@@ -1,1 +1,5 @@
+git remote add origin https://github.com/pani79/angularMaterialPruebas.git
+git config --global user.email "emilio.panizza@gmail.com"
+git config --global user.name "pani79"
+
 ng add @angular/material
