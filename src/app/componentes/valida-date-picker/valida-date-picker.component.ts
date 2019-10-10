@@ -10,13 +10,13 @@ import { FormBuilder } from '@angular/forms';
 export class ValidaDatePickerComponent implements OnInit {
 
   prueba: FormGroup;
-  minDateValue = new Date(1900, 1, 1);
-  maxDateValue = new Date();
+  startDate = new Date(1900, 1, 1);
+  endDate = new Date();
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-  this.minDateValue = new Date(1900, 1, 1);
-  this.maxDateValue = new Date();
+  this.startDate = new Date(1900, 1, 1);
+  this.endDate = new Date();
     this.prueba  = this.fb.group({
       rSexo: ['', [
         Validators.required
@@ -25,12 +25,14 @@ export class ValidaDatePickerComponent implements OnInit {
         Validators.required
       ]]
     });
+console.log();
+
   }
 
   
   get rFechaNacimiento() {      return this.prueba.get('rFechaNacimiento'); }
 
-  formularioEnviar(datos: any){console.log(datos);
+  formularioEnviar(datos: any) {console.log(datos);
   }
 
 }

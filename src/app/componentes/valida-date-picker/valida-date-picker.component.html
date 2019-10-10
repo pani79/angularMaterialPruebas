@@ -20,7 +20,8 @@
       </mat-form-field>
 
     <mat-form-field>
-        <input matInput [matDatepicker]="pickerto" placeholder="Fecha de nacimiento" formControlName="rFechaNacimiento" [min]="startDate" [max]="endDate">
+        <input matInput [matDatepicker]="pickerto" placeholder="Fecha de nacimiento" formControlName="rFechaNacimiento" 
+        [min]="startDate" [max]="endDate">
         <mat-datepicker-toggle matSuffix [for]="pickerto"></mat-datepicker-toggle>
         <mat-datepicker #pickerto></mat-datepicker>
         <mat-error *ngIf="prueba.controls['rFechaNacimiento'].hasError('required')">Este es un campo requerido</mat-error>
